@@ -6,7 +6,7 @@ import android.content.pm.PackageInfo
 import com.example.sdk.model.AppData
 
 
-class AppListProvider {
+object AppListProvider {
 
     fun getList(context: Context): ArrayList<AppData> {
         val list: ArrayList<AppData> = ArrayList()

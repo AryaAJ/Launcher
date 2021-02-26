@@ -13,7 +13,7 @@ import com.example.sdk.model.AppData
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private var service = AppListProvider()
+    private var appListProvider = AppListProvider
     lateinit var appListAdapter: AppListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setupRecyclerView()
 
-        val list = service.getList(this)
+        val list = appListProvider.getList(this)
         appListAdapter.differ.submitList(list)
 
         search.addTextChangedListener(object : TextWatcher {
